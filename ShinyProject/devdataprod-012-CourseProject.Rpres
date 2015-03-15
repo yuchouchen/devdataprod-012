@@ -1,0 +1,36 @@
+Course Project of devdataprod-012
+========================================================
+author: YUCHOU CHEN
+date: `r date()`
+transition: rotate
+incremental: false
+font-family: 'Helvetica'
+
+First Slide
+========================================================
+type: exclaim
+id: slide1
+
+For more details on authoring R presentations click the
+**Help** button on the toolbar.
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+Slide With Code
+========================================================
+type: exclaim
+[Go to slide 1](#/slide1)
+
+```{r, echo=FALSE}
+setwd("C:\\Users\\YUCHOUCHEN\\Documents\\R programming\\devdataprod-012\\ShinyProject")
+summary(cars)
+```
+
+Slide With Plot
+========================================================
+type: exclaim
+```{r, echo=FALSE}
+plot(cars)
+```
