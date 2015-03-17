@@ -6,14 +6,24 @@
   color: red;
 }
 
+.exclaim h3 {
+  color: #0066FF;
+}
+
+div.mediaInline p img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
 .exclaim .reveal .state-background {
-  background: lightblue;
+  background: #CCCCFF;
 } 
 
 .exclaim .reveal h1,
 .exclaim .reveal h2,
 .exclaim .reveal p {
-  color: white;
+  color: #000066;
 }
 
 .exclaim .reveal section{

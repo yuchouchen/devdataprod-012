@@ -1,36 +1,81 @@
-Course Project of devdataprod-012
+Application of Fuel Economy Analysis
 ========================================================
-author: YUCHOU CHEN
-date: `r date()`
+author: YuChou Chen
+date: `r format(Sys.time(), "%Y-%m-%d")`
+width: 1024
+height: 900
 transition: rotate
 incremental: false
 font-family: 'Helvetica'
 
-First Slide
+- Course Project of devdataprod-012 (Developing Data Products)
+
+Application of Fuel Economy Analysis
 ========================================================
 type: exclaim
 id: slide1
 
-For more details on authoring R presentations click the
-**Help** button on the toolbar.
+- Basic: Explortory Data Analysis
+- Advanced: Fitting Method using Linear Method and Others
+- Based on Shiny
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+For more details, <span style=color:red>welcome to visit</span>:
+https://yuchouchen.shinyapps.io/ShinyProject/
 
-Slide With Code
+Basic: Explortory Data Analysis
 ========================================================
 type: exclaim
-[Go to slide 1](#/slide1)
 
 ```{r, echo=FALSE}
 setwd("C:\\Users\\YUCHOUCHEN\\Documents\\R programming\\devdataprod-012\\ShinyProject")
-summary(cars)
+library(ggplot2)
+library(AppliedPredictiveModeling)
+data(FuelEconomy)
+cars2010 <- cars2010[order(cars2010$EngDispl),]
+cars2011 <- cars2011[order(cars2011$EngDispl),]
+cars2010a <- cars2010
+cars2010a$Year <- "2010 Model Year"
+cars2011a <- cars2011
+cars2011a$Year <- "2011 Model Year"
+plotData <- rbind(cars2010a, cars2011a)
+dataset <- plotData
 ```
 
-Slide With Plot
+```{r}
+summary(dataset$FE)
+```
+
+```{r, echo=FALSE}
+g <- ggplot(dataset, aes(x=FE)) 
+g <- g + geom_bar(fill="white", colour="black")
+g
+```
+
+Advanced: Fitting Method
 ========================================================
 type: exclaim
+
+Fitting method can be :
+- lm (linear model) 
+- loess (local polynomial regression fitting)
+- gam (generalized additive model)
+
 ```{r, echo=FALSE}
-plot(cars)
+p <- ggplot(dataset, aes(FE, EngDispl)) + geom_point()
+p <- p + aes(color=AirAspirationMethod)
+p <- p + geom_smooth(method=lm, se=TRUE)
+p
 ```
+
+Summary
+========================================================
+type: exclaim
+
+- Easy to explore Fuel Economy data
+- Quick to find relationship between key variables and Fuel Economy
+
+- <span style=color:red>Why not give it a trial?</span> Just click: 
+https://yuchouchen.shinyapps.io/ShinyProject/
+
+[Go to slide 1](#/slide1)
+

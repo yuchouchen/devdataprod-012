@@ -1,40 +1,65 @@
-Course Project of devdataprod-012
+Application of Fuel Economy Analysis
 ========================================================
-author: YUCHOU CHEN
-date: Thu Mar 12 20:41:23 2015
+author: YuChou Chen
+date: 2015-03-17
+width: 1024
+height: 900
 transition: rotate
 incremental: false
 font-family: 'Helvetica'
 
-First Slide
+- Course Project of devdataprod-012 (Developing Data Products)
+
+Application of Fuel Economy Analysis
 ========================================================
 type: exclaim
 id: slide1
 
-For more details on authoring R presentations click the
-**Help** button on the toolbar.
+- Basic: Explortory Data Analysis
+- Advanced: Fitting Method using Linear Method and Others
+- Based on Shiny
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+For more details, <span style=color:red>welcome to visit</span>:
+https://yuchouchen.shinyapps.io/ShinyProject/
 
-Slide With Code
+Basic: Explortory Data Analysis
 ========================================================
 type: exclaim
+
+
+
+
+```r
+summary(dataset$FE)
+```
+
+```
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  17.50   29.00   34.50   34.71   39.23   69.64 
+```
+
+![plot of chunk unnamed-chunk-3](devdataprod-012-CourseProject-figure/unnamed-chunk-3-1.png) 
+
+Advanced: Fitting Method
+========================================================
+type: exclaim
+
+Fitting method can be :
+- lm (linear model) 
+- loess (local polynomial regression fitting)
+- gam (generalized additive model)
+
+![plot of chunk unnamed-chunk-4](devdataprod-012-CourseProject-figure/unnamed-chunk-4-1.png) 
+
+Summary
+========================================================
+type: exclaim
+
+- Easy to explore Fuel Economy data
+- Quick to find relationship between key variables and Fuel Economy
+
+- <span style=color:red>Why not give it a trial?</span> Just click: 
+https://yuchouchen.shinyapps.io/ShinyProject/
+
 [Go to slide 1](#/slide1)
 
-
-```
-     speed           dist       
- Min.   : 4.0   Min.   :  2.00  
- 1st Qu.:12.0   1st Qu.: 26.00  
- Median :15.0   Median : 36.00  
- Mean   :15.4   Mean   : 42.98  
- 3rd Qu.:19.0   3rd Qu.: 56.00  
- Max.   :25.0   Max.   :120.00  
-```
-
-Slide With Plot
-========================================================
-type: exclaim
-![plot of chunk unnamed-chunk-2](devdataprod-012-CourseProject-figure/unnamed-chunk-2-1.png) 
